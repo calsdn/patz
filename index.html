@@ -4,10 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Patz — 네일 디자인 탐색 & 예약</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
 
   <!-- Google Analytics GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-M9KV4JCLD5"></script>
@@ -26,99 +22,40 @@
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window,document,"clarity","script","w1vu3wwdbx");
   </script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      background: #fff;
+      width: 100%;
+    }
+
+    .page {
+      position: relative;
+      width: 100%;
+    }
+
+    .page object {
+      width: 100%;
+      aspect-ratio: 1125 / 12000;
+      display: block;
+    }
+
+  </style>
 </head>
 <body>
+  <!-- Hidden form for Netlify bot detection -->
+  <form name="signup" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="contact" />
+  </form>
 
-  <!-- HERO -->
-  <section class="hero reveal" data-section="hero">
-    <div class="grain"></div>
-    <div class="hero-content">
-      <p class="eyebrow">Coming soon 💅</p>
-      <h1 class="logo">patz</h1>
-      <p class="tagline">원하는 네일 디자인을 찾고,<br />근처 샵에서 바로 예약까지.</p>
-    </div>
-  </section>
-
-  <!-- PROBLEM -->
-  <section class="section reveal" data-section="problem">
-    <div class="container">
-      <p class="section-label">지금 이런 불편함, 있지 않으신가요?</p>
-      <div class="cards">
-        <div class="card">
-          <span class="card-icon">📱</span>
-          <p>원하는 디자인을 인스타에서 한참 뒤져야 함</p>
-        </div>
-        <div class="card">
-          <span class="card-icon">📍</span>
-          <p>마음에 드는 아트를 근처에서 해주는 샵을 못 찾겠음</p>
-        </div>
-        <div class="card">
-          <span class="card-icon">📞</span>
-          <p>DM 보내고, 전화하고, 예약이 너무 번거로움</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SOLUTION -->
-  <section class="section section-dark reveal" data-section="solution">
-    <div class="container">
-      <p class="section-label">patz가 해결합니다</p>
-      <div class="steps">
-        <div class="step">
-          <span class="step-num">01</span>
-          <div>
-            <h3>디자인 탐색</h3>
-            <p>이미지 중심으로 네일 디자인을 쉽게 둘러보세요. 핀터레스트처럼, 네일에 특화되어.</p>
-          </div>
-        </div>
-        <div class="step">
-          <span class="step-num">02</span>
-          <div>
-            <h3>근처 샵 연결</h3>
-            <p>마음에 드는 디자인을 시술 가능한 내 주변 네일샵을 바로 확인하세요.</p>
-          </div>
-        </div>
-        <div class="step">
-          <span class="step-num">03</span>
-          <div>
-            <h3>간편 예약</h3>
-            <p>DM도, 전화도 필요 없이. 앱에서 바로 예약 완료.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA / SIGNUP -->
-  <section class="section reveal" id="signup" data-section="signup">
-    <div class="container container-narrow">
-      <p class="section-label">사전 신청</p>
-      <h2>먼저 써보고 싶으신가요?</h2>
-      <p class="sub">이메일을 남겨주시면 서비스 오픈 시 가장 먼저 알려드릴게요.</p>
-      <form class="signup-form" name="signup" method="POST" action="/thank-you" data-netlify="true">
-        <input type="hidden" name="form-name" value="signup" />
-        <div class="form-row">
-          <input type="email" name="email" placeholder="이메일 주소" required />
-          <button type="submit" class="btn">신청하기</button>
-        </div>
-        <div class="form-row">
-          <select name="role">
-            <option value="" disabled selected>나는 어떤 사용자인가요?</option>
-            <option value="user">네일 이용자</option>
-            <option value="shop">네일샵 운영자</option>
-          </select>
-        </div>
-      </form>
-      <p class="fine-print">스팸 없이, 오픈 소식만 드립니다.</p>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© <span id="year"></span> Patz. All rights reserved.</p>
-  </footer>
-
-  <script src="main.js"></script>
+  <div class="page">
+    <object type="image/svg+xml" data="assets/artboard.svg" aria-label="Patz"></object>
+  </div>
 </body>
 </html>
