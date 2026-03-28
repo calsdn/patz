@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Patz — 네일 디자인 탐색 & 예약</title>
 
   <!-- Google Analytics GA4 -->
@@ -30,14 +30,22 @@
       box-sizing: border-box;
     }
 
-    html, body {
-      background: #fff;
+    html {
       width: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      width: 100vw;
+      overflow-x: hidden;
+      background: #000;
     }
 
     .page {
       position: relative;
-      width: 100%;
+      width: 100vw;
+      line-height: 0;
+      font-size: 0;
     }
 
     .page object {
