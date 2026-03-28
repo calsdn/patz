@@ -30,13 +30,10 @@
       box-sizing: border-box;
     }
 
-    html {
+    html, body {
+      margin: 0;
+      padding: 0;
       width: 100%;
-      overflow-x: hidden;
-    }
-
-    body {
-      width: 100vw;
       overflow-x: hidden;
       background: #000;
     }
@@ -44,14 +41,15 @@
     .page {
       position: relative;
       width: 100vw;
+      overflow: hidden;
       line-height: 0;
       font-size: 0;
     }
 
     .page object {
-      width: 100%;
-      aspect-ratio: 1125 / 12000;
       display: block;
+      width: 100vw;
+      height: calc(100vw * 12000 / 1125);
     }
 
   </style>
