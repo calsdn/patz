@@ -24,6 +24,12 @@
   </script>
 
   <style>
+    @font-face {
+      font-family: 'Pretendard Variable';
+      src: url('fonts/PretendardVariable.ttf') format('truetype');
+      font-weight: 100 900;
+    }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     html, body {
@@ -33,6 +39,7 @@
     }
 
     .page {
+      position: relative;
       width: 100%;
       line-height: 0;
       font-size: 0;
@@ -45,16 +52,67 @@
       margin-left: -12%;
       height: auto;
     }
+
+    /* Form overlay — vw values derived from SVG coords (viewBox 1125×9400, object 124vw wide, -12vw offset) */
+    /* left  = (svg_x  * 124/1125 - 12) vw */
+    /* top   = (svg_y  * 124/1125) vw       */
+    /* width = (svg_w  * 124/1125) vw       */
+    /* height= (svg_h  * 124/1125) vw       */
+    .form-overlay {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 929vw;
+      width: 96.67vw;     /* 877.18 * 124/1125        */
+      height: 10vw;
+      display: flex;
+      align-items: center;
+      gap: 2.13vw;
+    }
+
+    .form-overlay input[type="text"] {
+      flex: 1;
+      height: 100%;
+      border-radius: 5vw;
+      border: none;
+      background: rgba(255, 255, 255, 0.5);
+      padding: 0 4vw;
+      font-size: 3.6vw;
+      font-family: 'Pretendard Variable', sans-serif;
+      font-weight: 500;
+      color: #333;
+      outline: none;
+    }
+
+    .form-overlay button {
+      width: 16vw;
+      height: 100%;
+      border-radius: 5vw;
+      border: none;
+      background: #000;
+      color: #fff;
+      font-size: 3.9vw;
+      font-family: 'Pretendard Variable', sans-serif;
+      font-weight: 500;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
   </style>
 </head>
 <body>
-  <!-- Hidden form for Netlify bot detection -->
+  <!-- Netlify form detection -->
   <form name="signup" netlify netlify-honeypot="bot-field" hidden>
     <input type="text" name="contact" />
   </form>
 
   <div class="page">
     <object type="image/svg+xml" data="assets/artboard.svg" aria-label="Patz"></object>
+
+    <form class="form-overlay" name="signup" method="POST" action="/thank-you">
+      <input type="hidden" name="form-name" value="signup" />
+      <input type="text" name="contact" placeholder="이메일 또는 전화번호" autocomplete="off" />
+      <button type="submit">등록</button>
+    </form>
   </div>
 </body>
 </html>
