@@ -29,19 +29,19 @@
     html, body {
       width: 100%;
       overflow-x: hidden;
-      background: #000;
+      background: #fff;
     }
 
     .page {
       width: 100%;
-      overflow: hidden;
+      line-height: 0;
+      font-size: 0;
     }
 
     .page object {
       display: block;
-      width: 1125px;
-      height: 12000px;
-      transform-origin: top left;
+      width: 100%;
+      height: auto;
     }
   </style>
 </head>
@@ -54,16 +54,5 @@
   <div class="page">
     <object type="image/svg+xml" data="assets/artboard.svg" aria-label="Patz"></object>
   </div>
-
-  <script>
-    function scaleSVG() {
-      var scale = window.innerWidth / 1125;
-      var obj = document.querySelector('.page object');
-      obj.style.transform = 'scale(' + scale + ')';
-      document.querySelector('.page').style.height = Math.ceil(12000 * scale) + 'px';
-    }
-    scaleSVG();
-    window.addEventListener('resize', scaleSVG);
-  </script>
 </body>
 </html>
