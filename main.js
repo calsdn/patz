@@ -5,6 +5,9 @@ function track(event, params = {}) {
   if (typeof clarity === 'function') clarity('event', event);
 }
 
+const ref = new URLSearchParams(window.location.search).get('ref');
+if (ref) track('source_visit', { source_page: ref });
+
 const sectionEnterTimes = {};
 
 const observer = new IntersectionObserver(
