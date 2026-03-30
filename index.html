@@ -97,6 +97,31 @@
       cursor: pointer;
       flex-shrink: 0;
     }
+
+    @media (min-width: 481px) {
+      html, body { background: #000; }
+
+      .page { max-width: 480px; margin: 0 auto; }
+
+      .form-overlay {
+        top: 4459px;
+        width: 464px;
+        height: 48px;
+        gap: 10px;
+      }
+
+      .form-overlay input[type="text"] {
+        border-radius: 24px;
+        padding: 0 19px;
+        font-size: 17px;
+      }
+
+      .form-overlay button {
+        width: 77px;
+        border-radius: 24px;
+        font-size: 19px;
+      }
+    }
   </style>
 </head>
 <body>
